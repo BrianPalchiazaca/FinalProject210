@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
-public class Zombie : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     public Transform Player;
@@ -15,7 +14,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         GetRefrence();
-        EnHealth = 3;
+        EnHealth = 6;
     }
 
     // Update is called once per frame
@@ -42,8 +41,6 @@ public class Zombie : MonoBehaviour
     private void GetRefrence()
     {
         Player = PlayerMovement.Clone;
-
-
     }
 
     public void Dead()
@@ -60,6 +57,5 @@ public class Zombie : MonoBehaviour
             Dead();
         }
     }
-
 
 }

@@ -30,5 +30,11 @@ public class Gun : MonoBehaviour
             }
         }
 
+        Enemy2 enemy2 = hit.transform.GetComponent<Enemy2>();
+        if (enemy2 != null)
+        {
+            enemy2.Damaged(damage);
+        }
+
     }
 }

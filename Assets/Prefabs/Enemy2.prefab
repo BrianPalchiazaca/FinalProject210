@@ -117,12 +117,12 @@ GameObject:
   - component: {fileID: 8692097036977999600}
   - component: {fileID: 7883619615453494617}
   - component: {fileID: 2266929193171871239}
-  - component: {fileID: 382365524395169902}
   - component: {fileID: -8638377453968157911}
   - component: {fileID: 6430304216836733530}
+  - component: {fileID: 1764502064376921448}
   m_Layer: 0
-  m_Name: Zombie
-  m_TagString: Zombies
+  m_Name: Enemy2
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84497ab45da52bb419c0b801f92fa934, type: 2}
+  - {fileID: 2100000, guid: bc2db4da32621244781c55ead0ebdd56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -216,23 +216,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &382365524395169902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619931809608539912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cad71390e1f34b4297461323dba7613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: -8638377453968157911}
-  Player: {fileID: 0}
-  Speed: 0
-  EnHealth: 0
-  Attack: 0
 --- !u!195 &-8638377453968157911
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -282,3 +265,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1764502064376921448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619931809608539912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbda5b570a77364bb2e667ea5247a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: -8638377453968157911}
+  Player: {fileID: 0}
+  Speed: 0
+  EnHealth: 0
+  Attack: 0

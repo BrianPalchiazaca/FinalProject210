@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float camRotation = 0f;
     public float walkSpeed;
     private float verticalSpeed;
-
     public float Gravity = -9.8f;
+    public float Health;
 
     public static Transform Clone;
     private void Awake()
@@ -23,14 +23,18 @@ public class PlayerMovement : MonoBehaviour
         Clone = this.transform;
     }
 
+    public TextManage GOText;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Health = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Movement
         float mouseInputY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
         camRotation -= mouseInputY;
         camRotation = Mathf.Clamp(camRotation, -90f, 90f);
@@ -55,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         verticalSpeed += (Gravity * Time.deltaTime);
         movement += (transform.up * verticalSpeed * Time.deltaTime);
 
+
+        //Sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             walkSpeed = walkSpeed * 2f;
@@ -63,19 +69,37 @@ public class PlayerMovement : MonoBehaviour
         {
             walkSpeed = walkSpeed / 2f;
         }
-
-
-
         CC.Move(movement);
 
+        //Health system
+        if (Health <= 0)
+        {
+            PlayerDies();
+        }
+
     }
+
+    //Detects enemies attack(When an enemy attacks them.)
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemies")
+        if (collision.gameObject.tag == "Zombie")
         {
-            Destroy(collision.gameObject);
-            //health = health - 1;
-            Debug.Log("Works");
+            //Destroy(collision.gameObject);
+            Health = Health - 1;
+            Debug.Log("Ouch");
         }
+
+        if (collision.gameObject.tag == "Enemy2")
+        {
+            //Destroy(collision.gameObject);
+            Health = Health - 1;
+            Debug.Log("Ouch");
+        }
+    }
+
+    public void PlayerDies()
+    {
+         GOText.AppearText();
+         Debug.Log("Im dead");
     }
 }
