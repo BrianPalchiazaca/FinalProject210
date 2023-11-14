@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Gun : MonoBehaviour
+{
+    public Camera Camera;
+    public float range = 20f;
+    public float damage = 1f;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, range))
+        {
+            Debug.Log("hit.transform.name");
+            Zombie zombie = hit.transform.GetComponent<Zombie>();
+            if (zombie != null)
+            {
+                zombie.Damaged(damage);
+            }
+        }
+
+    }
+}
