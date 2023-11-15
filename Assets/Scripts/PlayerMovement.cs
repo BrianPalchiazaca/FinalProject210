@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         Clone = this.transform;
     }
 
+    //public TextManage GOText;
     public TextManage GOText;
 
     void Start()
@@ -101,5 +105,9 @@ public class PlayerMovement : MonoBehaviour
     {
          GOText.AppearText();
          Debug.Log("Im dead");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
