@@ -12,6 +12,8 @@ public class Zombie : MonoBehaviour
     public float EnHealth = 0;
     public float Attack = 0;
 
+    public ParticleSystem Blood;
+
     void Start()
     {
         GetRefrence();
@@ -61,5 +63,5 @@ public class Zombie : MonoBehaviour
         }
     }
 
-
+    
 }
