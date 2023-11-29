@@ -23,7 +23,7 @@ public class Zombie : MonoBehaviour
     {
         GetRefrence();
         EnHealth = 3;
-
+        
     }
 
     // Update is called once per frame
