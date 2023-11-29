@@ -12,6 +12,7 @@ public class Enemy2 : MonoBehaviour
     public float EnHealth = 0;
     public float Attack = 0;
 
+    public ParticleSystem blood;
 
     void Start()
     {
@@ -54,7 +55,9 @@ public class Enemy2 : MonoBehaviour
 
     public void Damaged(float amount)
     {
+
         EnHealth -= amount;
+        blood.Play();
         if (EnHealth <= 0f)
         {
             Dead();
