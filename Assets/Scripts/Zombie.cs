@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -12,12 +13,16 @@ public class Zombie : MonoBehaviour
     public float EnHealth = 0;
     public float Attack = 0;
 
-    public ParticleSystem Blood;
+    public PlayerMovement player;
+
+
+    //public ParticleSystem Blood;
 
     void Start()
     {
         GetRefrence();
         EnHealth = 3;
+
     }
 
     // Update is called once per frame
@@ -44,13 +49,12 @@ public class Zombie : MonoBehaviour
     private void GetRefrence()
     {
         Player = PlayerMovement.Clone;
-
-
     }
 
     public void Dead()
     {
         Destroy(gameObject);
+        //player.AddScore();
         Debug.Log("Die");
     }
 

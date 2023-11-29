@@ -178,6 +178,9 @@ MonoBehaviour:
   Speed: 0
   EnHealth: 0
   Attack: 0
+  Score: 0
+  points: 2
+  ScoreText: {fileID: 0}
 --- !u!1001 &856716685757586193
 PrefabInstance:
   m_ObjectHideFlags: 0

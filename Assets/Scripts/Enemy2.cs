@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy2 : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class Enemy2 : MonoBehaviour
     public float EnHealth = 0;
     public float Attack = 0;
 
+
     void Start()
     {
         GetRefrence();
         EnHealth = 6;
+
     }
 
     // Update is called once per frame

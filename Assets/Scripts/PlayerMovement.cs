@@ -19,8 +19,14 @@ public class PlayerMovement : MonoBehaviour
     private float verticalSpeed;
     public float Gravity = -9.8f;
     public float Health;
+    public Zombie Zom;
+
+    public int Score = 0;
+    public int points = 0;
+    public Text ScoreText;
 
     public static Transform Clone;
+
     private void Awake()
     {
         Clone = this.transform;
@@ -32,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
         Health = 3;
+
+        ScoreText.text = "Score: " + Score.ToString();
     }
 
     // Update is called once per frame
@@ -58,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (CC.isGrounded)
         {
             verticalSpeed = 0f;
+            
         }
 
         verticalSpeed += (Gravity * Time.deltaTime);
@@ -81,14 +91,17 @@ public class PlayerMovement : MonoBehaviour
             PlayerDies();
         }
 
+        ScoreText.text = "Score: " + Score.ToString();
     }
 
     //Detects enemies attack(When an enemy attacks them.)
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Zombie")
+        if (collision.gameObject.tag == "Zombies")
         {
             //Destroy(collision.gameObject);
+
+
             Health = Health - 1;
             Debug.Log("Ouch");
         }
@@ -96,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy2")
         {
             //Destroy(collision.gameObject);
+
+
             Health = Health - 1;
             Debug.Log("Ouch");
         }
@@ -103,11 +118,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerDies()
     {
-         GOText.AppearText();
-         Debug.Log("Im dead");
+        GOText.AppearText();
+        Debug.Log("Im dead");
+        walkSpeed = 0f;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void AddScore()
+    {
+        Score += points;
+        //ScoreText.text = "Score: " + Score.ToString();
     }
 }

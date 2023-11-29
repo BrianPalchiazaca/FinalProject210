@@ -129,6 +129,9 @@ MonoBehaviour:
   Speed: 0
   EnHealth: 0
   Attack: 0
+  Score: 0
+  points: 1
+  ScoreText: {fileID: 0}
 --- !u!195 &-8638377453968157911
 NavMeshAgent:
   m_ObjectHideFlags: 0
