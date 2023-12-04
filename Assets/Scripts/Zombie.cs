@@ -14,6 +14,7 @@ public class Zombie : MonoBehaviour
     public float Attack = 0;
 
     public PlayerMovement player;
+    public ParticleSystem blood;
 
 
     //public ParticleSystem Blood;
@@ -22,7 +23,7 @@ public class Zombie : MonoBehaviour
     {
         GetRefrence();
         EnHealth = 3;
-
+        
     }
 
     // Update is called once per frame
@@ -60,7 +61,9 @@ public class Zombie : MonoBehaviour
 
     public void Damaged(float amount)
     {
+
         EnHealth -= amount;
+        blood.Play();
         if (EnHealth <= 0f)
         {
             Dead();
