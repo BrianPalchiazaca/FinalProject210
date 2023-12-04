@@ -12335,7 +12335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 4619931809608539912, guid: b94043ce63168d64e9afb8405d84926a, type: 3}
   spawn: {fileID: 1592307229}
-  num: 15
+  num: 10
   EnemyList: []
 --- !u!1001 &1597240236
 PrefabInstance:
@@ -21465,7 +21465,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2073024070
 MonoBehaviour:
   m_ObjectHideFlags: 0
