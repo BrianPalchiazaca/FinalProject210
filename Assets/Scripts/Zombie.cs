@@ -54,9 +54,8 @@ public class Zombie : MonoBehaviour
 
     public void Dead()
     {
-        FindObjectOfType<PlayerMovement>().AddScore();
         Destroy(gameObject);
-        
+        //player.AddScore();
         Debug.Log("Die");
     }
 

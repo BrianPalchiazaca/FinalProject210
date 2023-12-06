@@ -49,7 +49,6 @@ public class Enemy2 : MonoBehaviour
 
     public void Dead()
     {
-        FindObjectOfType<PlayerMovement>().AddScore();
         Destroy(gameObject);
         Debug.Log("Die");
     }
