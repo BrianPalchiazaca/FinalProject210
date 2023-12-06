@@ -10,15 +10,6 @@ public class Spawner : MonoBehaviour
     public float num = 0;
     
 
-
-    public List<GameObject> EnemyList;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -28,9 +19,6 @@ public class Spawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(Enemy, spawn.position, Quaternion.identity);
             delay = num;
-            EnemyList.Add(enemy);
-
-            //ZombieMovement.Speed = 2;
         }
 
 
