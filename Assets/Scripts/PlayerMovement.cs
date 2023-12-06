@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public int points = 0;
     public Text ScoreText;
 
+    public PlayerHealth HealthBar;
+
     public static Transform Clone;
 
     private void Awake()
@@ -94,14 +96,13 @@ public class PlayerMovement : MonoBehaviour
         ScoreText.text = "Score: " + Score.ToString();
     }
 
-    //Detects enemies attack(When an enemy attacks them.)
+    //Detects enemies attack(When an enemy comes to contact with the player.)
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Zombies")
         {
             //Destroy(collision.gameObject);
-
-
+            HealthBar.TakeDamage(33);
             Health = Health - 1;
             Debug.Log("Ouch");
         }
@@ -109,8 +110,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy2")
         {
             //Destroy(collision.gameObject);
-
-
+            FindObjectOfType<PlayerHealth>().TakeDamage(33);
             Health = Health - 1;
             Debug.Log("Ouch");
         }
@@ -131,6 +131,6 @@ public class PlayerMovement : MonoBehaviour
     public void AddScore()
     {
         Score += points;
-        //ScoreText.text = "Score: " + Score.ToString();
+        ScoreText.text = "Score: " + Score.ToString();
     }
 }
