@@ -100,8 +100,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Zombies")
         {
             //Destroy(collision.gameObject);
-
-
+            FindObjectOfType<PlayerHealth>().TakeDamage(33);
             Health = Health - 1;
             Debug.Log("Ouch");
         }

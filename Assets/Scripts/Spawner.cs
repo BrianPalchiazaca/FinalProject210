@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
     private float delay;
     public Transform spawn;
     public float num = 0;
+    
+
 
     public List<GameObject> EnemyList;
 
@@ -31,9 +33,6 @@ public class Spawner : MonoBehaviour
             //ZombieMovement.Speed = 2;
         }
 
-        if (EnemyList.Count <= 5)
-        {
 
-        }
     }
 }
