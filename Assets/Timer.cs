@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public Image timer;
     public float TimeLeft = 180f;
-    private float delay = 5;
+    private float delay = 1;
 
     public void Update()
     {
@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
         if (delay <= 0)
         {
             TimeGoingDown(1);
+            delay = 1;
         }
 
     }

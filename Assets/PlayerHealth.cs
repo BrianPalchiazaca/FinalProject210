@@ -5,13 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Image healthBar;
-    public float healthAmount = 100f;
+    public Image healthbar;
+    public float HealthLeft = 100f;
 
-    public void TakeDamage(float damage)
+
+    public void TakenDamage(float health)
     {
-        healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 100;
+        HealthLeft -= health;
+        healthbar.fillAmount = HealthLeft / 100;
+    }
 
+    public void RegenHelth(float health)
+    {
+        HealthLeft += health;
+        healthbar.fillAmount = HealthLeft / 100;
     }
 }
