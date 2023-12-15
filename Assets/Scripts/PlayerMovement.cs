@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-        Health = 3;
+        Health = 10;
 
         ScoreText.text = "Score: " + Score.ToString();
     }
@@ -91,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
             PlayerDies();
         }
 
-        if
 
         ScoreText.text = "Score: " + Score.ToString();
     }
@@ -102,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Zombies")
         {
             //Destroy(collision.gameObject);
-            FindObjectOfType<PlayerHealth>().TakenDamage(33);
+            FindObjectOfType<PlayerHealth>().TakenDamage(10);
             Health = Health - 1;
             Debug.Log("Ouch");
         }
@@ -110,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy2")
         {
             //Destroy(collision.gameObject);
-            FindObjectOfType<PlayerHealth>().TakenDamage(33);
+            FindObjectOfType<PlayerHealth>().TakenDamage(10);
             Health = Health - 1;
             Debug.Log("Ouch");
         }
