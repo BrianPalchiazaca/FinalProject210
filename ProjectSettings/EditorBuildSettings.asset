@@ -21,9 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene 4.unity
     guid: 6fafecaafe0593945a9e009bf4b958d1
   - enabled: 1
-    path: Assets/Scenes/Main Game New.unity
-    guid: bd921051660e4cb4099e64e88098afb1
+    path: Assets/Assets/Main Game New.unity
+    guid: 5018514af2bd94f48b1093f837020d7b
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 94e715e2f09caa441b0cba842319c7be
+  - enabled: 0
+    path: Assets/Scenes/Main Game New.unity
+    guid: bd921051660e4cb4099e64e88098afb1
   m_configObjects: {}
