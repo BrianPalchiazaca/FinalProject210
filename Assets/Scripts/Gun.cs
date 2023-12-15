@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
     public Camera Camera;
     public float range = 20f;
-    public float damage = 1f;
+    public float damage = 2f;
     public float FireRate = 1f;
     private float NextTimeShot = 0f;
 

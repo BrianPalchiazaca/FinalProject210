@@ -13,7 +13,6 @@ public class TextManage : MonoBehaviour
         HideText();
     }
 
-
     public void HideText()
     {
         GOText.SetActive(false);
