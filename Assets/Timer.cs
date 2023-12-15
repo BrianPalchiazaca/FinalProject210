@@ -8,7 +8,6 @@ public class Timer : MonoBehaviour
     public Image timer;
     public float TimeLeft = 180f;
     private float delay = 1;
-    public TextManage GOTextWin;
 
     public void Update()
     {
@@ -17,11 +16,6 @@ public class Timer : MonoBehaviour
         {
             TimeGoingDown(1);
             delay = 1;
-        }
-
-        if (TimeLeft == 0)
-        {
-            GOTextWin.AppearText();
         }
 
     }
